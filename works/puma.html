@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PUMA x LAUNDRYPIZZA – SOWON KIM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/works.css">
+</head>
+<body>
+
+
+<!-- ════ 메인 내비 ════ -->
+<nav id="mainNav">
+  <ul class="nav-links">
+    <li><a href="../index.html"       data-page="home">HOME</a></li>
+    <li><a href="vetements.html" class="active" data-page="works">WORKS</a></li>
+    <li><a href="../about.html"       data-page="about">ABOUT</a></li>
+  </ul>
+  <button class="nav-mail" id="mailBtn" title="Contact">
+    <img src="../img/mail.png" alt="mail">
+  </button>
+</nav>
+
+
+<!-- ════ WORKS 서브내비 ════
+    ✏️ 새 작업 추가 시 gen_works.py 의 works 배열에 추가하면 자동 반영 -->
+<nav class="works-subnav" id="worksSubnav">
+      <a href="vetements.html">VETEMENTS</a>
+      <a href="sony.html">SONY</a>
+      <a href="pag.html">PIZZAALWAYSGOOD</a>
+      <a href="goopi.html">GOOPI</a>
+      <a href="puma.html" class="active">PUMA x LAUNDRYPIZZA</a>
+      <a href="ai.html">AI ARCHIVE</a>
+      <a href="design.html">GRAPHIC ARCHIVE</a>
+      <a href="drawing.html">DRAWING</a>
+</nav>
+
+
+<!-- ════ 작업 상세 콘텐츠 ════ -->
+<main class="works-detail" id="top">
+
+  <!-- ✏️ 통이미지: works-img/포트폴리오_PUMA.jpg -->
+  <div class="works-full-img">
+    <img src="../works-img/puma.jpg" alt="puma">
+  </div>
+
+  <!-- ✏️ 이미지를 추가로 넣고 싶다면:
+  <div class="works-full-img">
+    <img src="../works-img/파일명.jpg" alt="설명">
+  </div>
+  -->
+
+</main>
+
+
+<!-- ════ OTHER WORKS ════ -->
+<section class="other-works-section">
+  <h2 class="other-works-title">OTHER WORKS</h2>
+  <div class="slider-wrapper">
+    <button class="slider-arrow arrow-left" id="arrowLeft">&#8592;</button>
+    <div class="slider-track" id="sliderTrack">
+      <a class="slide-card" href="vetements.html">
+        <img class="slide-thumb" src="../img/vetements.jpg" alt="vetements">
+        <div class="slide-overlay">
+          <p class="slide-title">&lt;VETEMENTS&gt;<br>WEBSITE REDESIGN</p>
+          <p class="slide-date">2026. 02</p>
+        </div>
+      </a>
+      <a class="slide-card" href="sony.html">
+        <img class="slide-thumb" src="../img/sony.jpg" alt="sony">
+        <div class="slide-overlay">
+          <p class="slide-title">&lt;SONY&gt;<br>WEBSITE REDESIGN</p>
+          <p class="slide-date">2026. 01</p>
+        </div>
+      </a>
+      <a class="slide-card" href="pag.html">
+        <img class="slide-thumb" src="../img/pag.jpg" alt="pag">
+        <div class="slide-overlay">
+          <p class="slide-title">&lt;PIZZAALWAYSGOOD&gt;<br>START-UP</p>
+          <p class="slide-date">2023. 03 ~ 2025. 05</p>
+        </div>
+      </a>
+      <a class="slide-card" href="goopi.html">
+        <img class="slide-thumb" src="../img/goopi.jpg" alt="goopi">
+        <div class="slide-overlay">
+          <p class="slide-title">&lt;GOOPI&gt;<br>BRAND VISUAL DIRECTER</p>
+          <p class="slide-date">2020. 08</p>
+        </div>
+      </a>
+      <a class="slide-card" href="ai.html">
+        <img class="slide-thumb" src="../img/ai.jpg" alt="ai">
+        <div class="slide-overlay">
+          <p class="slide-title">AI ARCHIVE</p>
+          <p class="slide-date">~2026</p>
+        </div>
+      </a>
+      <a class="slide-card" href="design.html">
+        <img class="slide-thumb" src="../img/design.jpg" alt="design">
+        <div class="slide-overlay">
+          <p class="slide-title">GRAPHIC ARCHIVE</p>
+          <p class="slide-date">~2026</p>
+        </div>
+      </a>
+      <a class="slide-card" href="drawing.html">
+        <img class="slide-thumb" src="../img/drawing.jpg" alt="drawing">
+        <div class="slide-overlay">
+          <p class="slide-title">DRAWING</p>
+          <p class="slide-date">~2026</p>
+        </div>
+      </a>
+    </div>
+    <button class="slider-arrow arrow-right" id="arrowRight">&#8594;</button>
+  </div>
+</section>
+
+
+<!-- ════ 공통 푸터 ════ -->
+<footer id="footer">
+  <a href="#top" class="footer-top-link">Back to Top ↑</a>
+  <span>©2026 SOWON KIM</span>
+</footer>
+
+<button class="back-to-top" id="backToTopBtn" title="맨 위로">↑</button>
+
+
+<!-- ════ 공통 CONTACT 모달 ════ -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="contactModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <h2 class="modal-title">CONTACT</h2>
+      <span class="modal-copy">©26</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form-area">
+        <p class="modal-label">성함 (필수) / Name (required)</p>
+        <div class="modal-name-row">
+          <div class="modal-field"><label>성 (First Name)</label><input type="text" placeholder="성을 입력하세요."></div>
+          <div class="modal-field"><label>이름 (Last Name)</label><input type="text" placeholder="이름을 입력하세요."></div>
+        </div>
+        <div class="modal-field">
+          <label>이메일 (필수) / E-mail (required)</label>
+          <div class="modal-email-row">
+            <input type="text" placeholder="portfolio" class="email-id">
+            <span class="at">@</span>
+            <div class="email-domain-wrap">
+              <input type="text" value="gmail.com" class="email-domain">
+              <span class="chevron">⌄</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-field"><label>메시지 / Message</label><input type="text" placeholder="메시지를 입력해주세요."></div>
+        <button class="modal-send">보내기 / SEND</button>
+        <p class="modal-footer-text">©2026. SOWON KIM. &nbsp;|&nbsp; kimsw797@gmail.com</p>
+      </div>
+      <div class="modal-image-area"><img src="../img/contact.jpg" alt="contact"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/common.js"></script>
+<script src="../js/slider.js"></script>
+
+</body>
+</html>

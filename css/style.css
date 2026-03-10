@@ -1,0 +1,623 @@
+/* =============================================
+  김소원 포트폴리오 — style.css
+   ============================================= */
+
+
+/* ─────────────────────────────────────────────
+  0. CSS 변수 (컬러 & 폰트)
+  수정할 때 여기만 바꾸면 전체에 반영됩니다.
+───────────────────────────────────────────── */
+:root {
+  /* 컬러 */
+  --deep-charcoal : #141618;   /* 프라이머리  — 텍스트, 테두리, 버튼 */
+  --off-white     : #FAFAFA;   /* 배경 베이스 */
+  --charcoal      : #343638;   /* 세컨더리 */
+  --cool-gray     : #747678;   /* 서브텍스트 */
+  --light-gray    : #D4D6D8;   /* 구분선, 그리드 갭 */
+
+  /* 폰트 */
+  --font-head : 'Pretendard', sans-serif;          /* 헤드 / 네비 */
+  --font-body : 'Inter', Arial, sans-serif;        /* 바디 / 캡션 */
+  --font-sub  : 'Nanum Myeongjo', serif;           /* 오버레이 날짜 */
+}
+
+
+/* ─────────────────────────────────────────────
+  1. 리셋 & 기본
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background  : var(--off-white);
+  color       : var(--deep-charcoal);
+  font-family : var(--font-body);
+  overflow-x  : hidden;
+}
+
+
+/* ─────────────────────────────────────────────
+  2. 네비게이션
+───────────────────────────────────────────── */
+nav {
+  position        : fixed;
+  top: 0; left: 0; right: 0;
+  z-index         : 200;
+  display         : flex;
+  align-items     : center;
+  justify-content : space-between;
+  padding         : 25px 28px;
+  background      : var(--off-white);
+  transition      : border-color 0.3s;
+}
+
+nav.scrolled { border-bottom-color: var(--light-gray); }
+
+.nav-links {
+  display    : flex;
+  gap        : 20px;
+  list-style : none;
+}
+
+.nav-links a {
+  text-decoration : none;
+  font-family     : var(--font-head);
+  font-size       : 20px;
+  font-weight     : 400;
+  letter-spacing  : 0.3em;
+  line-height     : 20px;
+  color           : var(--deep-charcoal);
+  padding         : 8px 15px;
+  border          : 1px solid transparent;
+  /* display         : inline-block; */
+  transition      : border-color 0.2s, scale 0.2s;
+}
+
+/* 호버 & 현재 페이지 — 박스 테두리 + 살짝 확대 */
+.nav-links a:hover,
+.nav-links a.active {
+  scale        : 1.05;
+  border-color : var(--deep-charcoal);
+  font-weight: 500;
+}
+
+/* 메일 아이콘 이미지 */
+.nav-mail {
+  font-size   : 30px;
+  color       : var(--deep-charcoal);
+  text-decoration: none;
+  filter      : grayscale(100%);
+  opacity     : 0.5;
+  transition  : opacity 0.4s, filter 0.4s;
+}
+.nav-mail img { width: 30px; height: 30px; display: block; }
+.nav-mail:hover { opacity: 1; filter: grayscale(0%); }
+
+
+/* ─────────────────────────────────────────────
+  3. 히어로 (타이틀 이미지 + 메타바)
+───────────────────────────────────────────── */
+.hero {
+  margin-top      : 60px;
+  height          : calc(100vh - 60px);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : stretch;
+  justify-content : space-between;
+}
+
+.hero-title-area {
+  flex            : 1;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  overflow        : hidden;
+}
+
+.hero-title-area img {
+  width       : 100%;
+  height      : 100%;
+  object-fit  : contain;
+  display     : block;
+}
+
+/* Caption 2: 12px / Regular / letter-spacing -2% */
+.meta-bar {
+  flex-shrink     : 0;
+  width           : 100%;
+  display         : flex;
+  justify-content : space-between;
+  padding         : 8px 16px;
+  font-family     : var(--font-body);
+  font-size       : 12px;
+  font-weight     : 400;
+  line-height     : 16px;
+  letter-spacing  : -0.02em;
+  color           : var(--cool-gray);
+  border-top      : 1px solid var(--light-gray);
+  border-bottom   : 1px solid var(--light-gray);
+}
+
+
+/* ─────────────────────────────────────────────
+  4. 작업물 그리드
+───────────────────────────────────────────── */
+.grid {
+  display               : grid;
+  grid-template-columns : 1fr 1fr;
+  gap                   : 2px;
+  background            : var(--light-gray);
+}
+
+.grid-item {
+  position        : relative;
+  overflow        : hidden;
+  background      : var(--off-white);
+  aspect-ratio    : 1 / 1;
+  display         : block;       /* <a> 태그일 때 블록 처리 */
+  text-decoration : none;        /* 링크 밑줄 제거 */
+}
+
+.thumb {
+  width      : 100%;
+  height     : 100%;
+  object-fit : cover;
+  display    : block;
+  transition : transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.grid-item:hover .thumb { transform: scale(1.06); }
+
+
+/* ─────────────────────────────────────────────
+  5. 호버 오버레이
+───────────────────────────────────────────── */
+.overlay {
+  position        : absolute;
+  inset           : 0;
+  background      : rgba(20, 22, 24, 0.78);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  gap             : 12px;
+  opacity         : 0;
+  transition      : opacity 0.35s ease;
+  padding         : 28px;
+  text-align      : center;
+  backdrop-filter : blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.grid-item:hover .overlay { opacity: 1; }
+
+/* 제목: Pretendard Black */
+.overlay-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(13px, 2vw, 30px);
+  font-weight    : 900;
+  letter-spacing : 0.06em;
+  line-height    : 1.4;
+  color          : var(--off-white);
+  text-transform : uppercase;
+}
+
+/* 구분선 (현재 주석처리 — 필요하면 아래 주석 해제) */
+/* .overlay-divider {
+  width      : 24px;
+  height     : 1px;
+  background : var(--cool-gray);
+} */
+.overlay-divider { display: none; }
+
+/* 날짜: NanumMyeongjo */
+.overlay-date {
+  font-family    : var(--font-sub);
+  font-size      : clamp(10px, 1.2vw, 20px);
+  font-weight    : 400;
+  letter-spacing : 0.06em;
+  line-height    : 18px;
+  color          : var(--light-gray);
+}
+
+
+/* ─────────────────────────────────────────────
+  6. Back to Top 고정 버튼
+───────────────────────────────────────────── */
+.back-to-top {
+  position        : fixed;
+  bottom          : 28px;
+  right           : 28px;
+  width           : 44px;
+  height          : 44px;
+  background      : var(--deep-charcoal);
+  color           : var(--off-white);
+  border          : none;
+  border-radius   : 50%;
+  font-family     : var(--font-body);
+  font-size       : 16px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  cursor          : pointer;
+  opacity         : 0;
+  pointer-events  : none;
+  transition      : opacity 0.3s, transform 0.25s;
+  z-index         : 300;
+  box-shadow      : 0 4px 18px rgba(20, 22, 24, 0.22);
+}
+
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover   { transform: translateY(-3px); }
+
+
+/* ─────────────────────────────────────────────
+  7. 푸터
+───────────────────────────────────────────── */
+footer {
+  text-align     : center;
+  padding        : 24px 16px 36px;
+  font-family    : var(--font-body);
+  font-size      : 12px;
+  font-weight    : 400;
+  letter-spacing : -0.02em;
+  color          : var(--cool-gray);
+  border-top     : 1px solid var(--light-gray);
+  display        : flex;
+  flex-direction : column;
+  gap            : 10px;
+}
+
+/* Body 3 Bold: Pretendard SemiBold */
+.footer-top-link {
+  font-family    : var(--font-head);
+  font-size      : 14px;
+  font-weight    : 600;
+  letter-spacing : 0.02em;
+  line-height    : 20px;
+  color          : var(--deep-charcoal);
+  text-decoration: none;
+  transition     : color 0.2s;
+}
+.footer-top-link:hover { color: var(--cool-gray); }
+
+
+/* ─────────────────────────────────────────────
+  8. 페이드업 애니메이션
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero                   { animation: fadeUp 0.8s ease both; }
+.grid-item              { animation: fadeUp 0.6s ease both; }
+.grid-item:nth-child(1) { animation-delay: 0.05s; }
+.grid-item:nth-child(2) { animation-delay: 0.10s; }
+.grid-item:nth-child(3) { animation-delay: 0.15s; }
+.grid-item:nth-child(4) { animation-delay: 0.20s; }
+.grid-item:nth-child(5) { animation-delay: 0.25s; }
+.grid-item:nth-child(6) { animation-delay: 0.30s; }
+.grid-item:nth-child(7) { animation-delay: 0.35s; }
+.grid-item:nth-child(8) { animation-delay: 0.40s; }
+
+
+/* ─────────────────────────────────────────────
+  9. 반응형
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav            { padding: 25px 16px; }
+  .nav-links a   { font-size: 15px; padding: 8px 15px; letter-spacing: 0.2em; }
+  .grid          { grid-template-columns: 1fr; }
+  .grid-item     { aspect-ratio: 4/3; }
+}
+
+
+/* ─────────────────────────────────────────────
+  10. 네비 메일 버튼 (button 태그)
+───────────────────────────────────────────── */
+.nav-mail {
+  background  : none;
+  border      : none;
+  cursor      : pointer;
+  padding     : 0;
+  display     : flex;
+  align-items : center;
+  filter      : grayscale(100%);
+  opacity     : 0.5;
+  transition  : opacity 0.4s, filter 0.4s;
+}
+.nav-mail img   { width: 30px; height: 30px; display: block; }
+.nav-mail:hover { opacity: 1; filter: grayscale(0%); }
+
+
+/* ─────────────────────────────────────────────
+  11. CONTACT 팝업 모달
+───────────────────────────────────────────── */
+
+/* 어두운 배경 */
+.modal-backdrop {
+  position        : fixed;
+  inset           : 0;
+  z-index         : 500;
+  background      : rgba(20, 22, 24, 0.55);
+  backdrop-filter : blur(4px);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  opacity         : 0;
+  pointer-events  : none;
+  transition      : opacity 0.3s ease;
+}
+.modal-backdrop.open {
+  opacity        : 1;
+  pointer-events : auto;
+}
+
+/* 모달 박스 */
+.modal {
+  position   : relative;
+  background : var(--off-white);
+  width      : min(760px, 92vw);
+  max-height : 90vh;
+  overflow-y : auto;
+  padding    : 40px 44px 32px;
+  transform  : translateY(24px);
+  transition : transform 0.35s ease;
+}
+.modal-backdrop.open .modal { transform: translateY(0); }
+
+/* 닫기 버튼 */
+.modal-close {
+  position        : absolute;
+  top             : 16px;
+  right           : 20px;
+  background      : none;
+  border          : 1.5px solid var(--deep-charcoal);
+  width           : 32px;
+  height          : 32px;
+  font-size       : 14px;
+  cursor          : pointer;
+  color           : var(--deep-charcoal);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  transition      : background 0.2s, color 0.2s;
+}
+.modal-close:hover { background: var(--deep-charcoal); color: var(--off-white); }
+
+/* 헤더: CONTACT + ©26 */
+.modal-header {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : flex-end;
+  margin-top: 28px;
+  margin-bottom   : 28px;
+}
+.modal-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(40px, 7vw, 72px);
+  font-weight    : 900;
+  letter-spacing : -0.01em;
+  line-height    : 1;
+  color          : var(--deep-charcoal);
+}
+.modal-copy {
+  font-family : var(--font-head);
+  font-size   : clamp(32px, 5vw, 56px);
+  font-weight : 900;
+  color       : var(--deep-charcoal);
+  line-height : 1;
+}
+
+/* 바디: 폼 + 이미지 나란히 */
+.modal-body        { display: flex; gap: 32px; align-items: flex-start; }
+.modal-form-area   { flex: 1; display: flex; flex-direction: column; gap: 18px; }
+.modal-image-area  { width: 160px; flex-shrink: 0; }
+.modal-image-area img { width: 100%; display: block; object-fit: cover; }
+
+/* 라벨 */
+.modal-label {
+  font-family    : var(--font-head);
+  font-size      : 13px;
+  font-weight    : 600;
+  letter-spacing : 0.02em;
+  color          : var(--deep-charcoal);
+  margin-bottom  : -6px;
+}
+
+/* 이름 2열 */
+.modal-name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* 필드 */
+.modal-field { display: flex; flex-direction: column; gap: 6px; }
+.modal-field label {
+  font-family    : var(--font-body);
+  font-size      : 11px;
+  color          : var(--cool-gray);
+  letter-spacing : -0.01em;
+}
+.modal-field input {
+  font-family   : var(--font-body);
+  font-size     : 13px;
+  color         : var(--deep-charcoal);
+  background    : transparent;
+  border        : none;
+  border-bottom : 1px solid var(--deep-charcoal);
+  padding       : 6px 0;
+  outline       : none;
+  width         : 100%;
+  transition    : border-color 0.2s;
+}
+.modal-field input::placeholder { color: var(--light-gray); }
+.modal-field input:focus        { border-bottom-color: var(--charcoal); }
+
+/* 이메일 행 */
+.modal-email-row {
+  display        : flex;
+  align-items    : center;
+  gap            : 8px;
+  border-bottom  : 1px solid var(--deep-charcoal);
+  padding-bottom : 6px;
+}
+.email-id           { flex: 1; border-bottom: none !important; padding-bottom: 0 !important; }
+.at                 { font-size: 13px; color: var(--cool-gray); flex-shrink: 0; }
+.email-domain-wrap  { display: flex; align-items: center; gap: 4px; flex: 1; }
+.email-domain       { flex: 1; border-bottom: none !important; padding-bottom: 0 !important; }
+.chevron            { font-size: 16px; color: var(--cool-gray); }
+
+/* 보내기 버튼 */
+.modal-send {
+  width          : 100%;
+  padding        : 14px;
+  background     : var(--deep-charcoal);
+  color          : var(--off-white);
+  border         : none;
+  font-family    : var(--font-head);
+  font-size      : 14px;
+  font-weight    : 600;
+  letter-spacing : 0.08em;
+  cursor         : pointer;
+  transition     : background 0.2s;
+  margin-top     : 4px;
+}
+.modal-send:hover { background: var(--charcoal); }
+
+/* 하단 카피 */
+.modal-footer-text {
+  font-family    : var(--font-body);
+  font-size      : 11px;
+  color          : var(--cool-gray);
+  letter-spacing : -0.01em;
+  margin-top     : -4px;
+}
+
+/* 반응형 */
+@media (max-width: 520px) {
+  .modal            { padding: 32px 24px 28px; }
+  .modal-body       { flex-direction: column; }
+  .modal-image-area { width: 100%; max-width: 200px; }
+  .modal-name-row   { grid-template-columns: 1fr; }
+}
+
+
+/* ─────────────────────────────────────────────
+  12. Works 상세 페이지 공통
+───────────────────────────────────────────── */
+
+/* 공통 OTHER WORKS 섹션 (about + works 페이지) */
+.other-works-section {
+  padding    : 64px 0 80px;
+  border-top : 1px solid var(--light-gray);
+  overflow   : hidden;
+}
+.other-works-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(18px, 2.5vw, 30px);
+  font-weight    : 700;
+  letter-spacing : 0.18em;
+  color          : var(--deep-charcoal);
+  text-align     : center;
+  margin-bottom  : 40px;
+}
+
+/* 슬라이더 */
+.slider-wrapper {
+  position    : relative;
+  display     : flex;
+  align-items : center;
+}
+.slider-track {
+  display            : flex;
+  gap                : 2px;
+  overflow-x         : auto;
+  scroll-behavior    : smooth;
+  scrollbar-width    : none;
+  -ms-overflow-style : none;
+  flex               : 1;
+  padding            : 0 56px;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+/* 슬라이드 카드 */
+.slide-card {
+  position        : relative;
+  flex-shrink     : 0;
+  width           : clamp(200px, 24vw, 290px);
+  aspect-ratio    : 1 / 1;
+  overflow        : hidden;
+  text-decoration : none;
+  display         : block;
+  background      : var(--light-gray);
+}
+.slide-thumb {
+  width      : 100%;
+  height     : 100%;
+  object-fit : cover;
+  display    : block;
+  transition : transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slide-card:hover .slide-thumb { transform: scale(1.06); }
+
+.slide-overlay {
+  position        : absolute;
+  inset           : 0;
+  background      : rgba(20, 22, 24, 0.78);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  gap             : 12px;
+  opacity         : 0;
+  transition      : opacity 0.35s ease;
+  padding         : 20px;
+  text-align      : center;
+  backdrop-filter : blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.slide-card:hover .slide-overlay { opacity: 1; }
+
+.slide-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(11px, 1.8vw, 22px);
+  font-weight    : 900;
+  letter-spacing : 0.06em;
+  line-height    : 1.4;
+  color          : var(--off-white);
+  text-transform : uppercase;
+}
+.slide-date {
+  font-family    : var(--font-sub);
+  font-size      : clamp(10px, 1vw, 16px);
+  letter-spacing : 0.06em;
+  color          : var(--light-gray);
+}
+
+/* 화살표 버튼 */
+.slider-arrow {
+  position        : absolute;
+  top             : 50%;
+  transform       : translateY(-50%);
+  z-index         : 10;
+  width           : 40px;
+  height          : 40px;
+  background      : var(--off-white);
+  border          : 1px solid var(--deep-charcoal);
+  color           : var(--deep-charcoal);
+  font-size       : 16px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  cursor          : pointer;
+  transition      : background 0.2s, color 0.2s;
+}
+.slider-arrow:hover          { background: var(--deep-charcoal); color: var(--off-white); }
+.slider-arrow:disabled       { opacity: 0.2; cursor: default; }
+.slider-arrow:disabled:hover { background: var(--off-white); color: var(--deep-charcoal); }
+.arrow-left  { left:  8px; }
+.arrow-right { right: 8px; }

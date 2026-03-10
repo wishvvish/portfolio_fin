@@ -1,0 +1,242 @@
+/* =============================================
+  김소원 포트폴리오 — about.css
+  style.css 의 CSS변수/폰트/컬러 공유
+   ============================================= */
+
+/* ─────────────────────────────────────────────
+  ★ 타이포그래피 시스템 (전체 통일)
+  
+  섹션 타이틀: KIM SOWON / SKILLS / EDUCATION / EXPERIENCES / OTHER WORKS
+    → Pretendard / 데스크탑 30px / clamp(18px, 2.5vw, 30px)
+    → 하단 border-bottom: 1px solid deep-charcoal
+  
+  섹션 내용: 인포 텍스트 / 리스트 아이템 이름 / 서브 / 연도
+    → 데스크탑 16px → clamp(12px, 1.4vw, 16px)
+───────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────
+  1. About 섹션
+───────────────────────────────────────────── */
+.about-section {
+  margin-top : 60px;
+  min-height : calc(100vh - 60px);
+  position   : relative;
+  overflow   : hidden;
+}
+
+/* ─────────────────────────────────────────────
+  2. 도트 배경 (좌측 상단)
+───────────────────────────────────────────── */
+.about-bg-area {
+  position            : absolute;
+  top                 : 0;
+  left                : 0;
+  width               : 100%;
+  height              : 100vh;
+  background-image    : url('../about-img/about-bg.jpg');
+  background-size     : cover;
+  background-position : center;
+  pointer-events      : none;
+  z-index             : 0;
+}
+
+/* ─────────────────────────────────────────────
+  3. 2컬럼 그리드
+───────────────────────────────────────────── */
+.about-grid {
+  display               : grid;
+  grid-template-columns : 1fr 1fr;
+  gap                   : 80px;
+  max-width             : 1100px;
+  margin                : 0 auto;
+  padding               : 80px 60px 80px;
+  position              : relative;
+  z-index               : 1;
+}
+
+/* ─────────────────────────────────────────────
+  4. 좌측 컬럼
+───────────────────────────────────────────── */
+.about-left {
+  display        : flex;
+  flex-direction : column;
+}
+
+/* 인트로 문구 (도트 배경 아래) */
+.about-intro {
+  font-family    : var(--font-head);
+  font-size      : clamp(22px, 3vw, 40px);
+  font-weight    : 400;
+  letter-spacing : -0.025em;
+  line-height    : 1.35;
+  color          : var(--deep-charcoal);
+  margin-top     : 140px;
+  margin-bottom  : 28px;
+}
+
+/* ── KIM SOWON — 섹션 타이틀 스타일 ── */
+.profile-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(16px, 2.5vw, 24px);   /* ★ 타이틀 */
+  font-weight    : 700;
+  letter-spacing : 0.18em;
+  color          : var(--deep-charcoal);
+  padding-bottom : 12px;
+  border-bottom  : 1px solid var(--deep-charcoal);
+  margin-bottom  : 16px;
+}
+
+/* 기본 정보 리스트 */
+.about-info {
+  list-style     : none;
+  display        : flex;
+  flex-direction : column;
+  gap            : 7px;
+  margin-bottom  : 40px;
+}
+.about-info li {
+  display        : flex;
+  gap            : 20px;
+  font-family    : var(--font-body);
+  font-size      : clamp(12px, 1.4vw, 16px);   /* ★ 내용 */
+  font-weight    : 400;
+  line-height    : 1.6;
+  letter-spacing : -0.02em;
+}
+.info-label {
+  color      : var(--cool-gray);
+  min-width  : 60px;
+  flex-shrink: 0;
+}
+.info-value { color: var(--deep-charcoal); }
+
+/* ── SKILLS — 섹션 타이틀 스타일 ── */
+.skills-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(16px, 2.5vw, 24px);   /* ★ 타이틀 */
+  font-weight    : 700;
+  letter-spacing : 0.18em;
+  color          : var(--deep-charcoal);
+  padding-bottom : 12px;
+  border-bottom  : 1px solid var(--deep-charcoal);
+  margin-bottom  : 14px;
+}
+
+/* 스킬 아이콘 목록 */
+.skills-list {
+  display     : flex;
+  flex-wrap   : wrap;
+  gap         : 8px;
+  align-items : center;
+}
+
+.skill-icon {
+  width         : clamp(28px, 3.5vw, 40px);   /* 타이틀 크기에 비례해서 아이콘도 조정 */
+  height        : clamp(28px, 3.5vw, 40px);
+  object-fit    : contain;
+  display       : block;
+  border-radius : 6px;
+  transition    : transform 0.2s, opacity 0.2s;
+}
+.skill-icon:hover { transform: scale(1.15); opacity: 0.8; }
+
+
+/* ─────────────────────────────────────────────
+  5. 우측 컬럼 — 학력 / 경력
+───────────────────────────────────────────── */
+.about-right {
+  display        : flex;
+  flex-direction : column;
+  gap            : 48px;
+}
+
+.about-block { display: flex; flex-direction: column; }
+
+/* ── EDUCATION / EXPERIENCES — 섹션 타이틀 스타일 ── */
+.block-title {
+  font-family    : var(--font-head);
+  font-size      : clamp(16px, 2.5vw, 24px);   /* ★ 타이틀 */
+  font-weight    : 700;
+  letter-spacing : 0.18em;
+  color          : var(--deep-charcoal);
+  padding-bottom : 12px;
+  border-bottom  : 1px solid var(--deep-charcoal);
+}
+
+/* 리스트 */
+.block-list {
+  list-style     : none;
+  display        : flex;
+  flex-direction : column;
+}
+.block-list li {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 12px 0;
+  border-bottom   : 1px solid var(--light-gray);
+}
+.block-list li:last-child { border-bottom: none; }
+
+.block-item-left { display: flex; flex-direction: column; gap: 3px; }
+
+/* 항목 이름 — ★ 내용 */
+.item-name {
+  font-family    : var(--font-head);
+  font-size      : clamp(12px, 1.4vw, 16px);   /* ★ 내용 */
+  font-weight    : 500;
+  letter-spacing : -0.01em;
+  line-height    : 1.5;
+  color          : var(--deep-charcoal);
+}
+
+/* 항목 서브 — ★ 내용보다 한 단계 작게 */
+.item-sub {
+  font-family    : var(--font-body);
+  font-size      : clamp(11px, 1.2vw, 14px);
+  font-weight    : 400;
+  letter-spacing : -0.01em;
+  color          : var(--cool-gray);
+}
+
+/* 연도 — ★ 내용 동일 크기 */
+.item-year {
+  font-family    : var(--font-body);
+  font-size      : clamp(12px, 1.4vw, 16px);   /* ★ 내용 */
+  font-weight    : 400;
+  letter-spacing : -0.01em;
+  color          : var(--cool-gray);
+  flex-shrink    : 0;
+  padding-left   : 16px;
+}
+/* ─────────────────────────────────────────────
+  8. 페이드업 애니메이션
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.about-left  { animation: fadeUp 0.7s 0.05s ease both; }
+.about-right { animation: fadeUp 0.7s 0.15s ease both; }
+
+
+/* ─────────────────────────────────────────────
+  9. 반응형
+───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-grid { gap: 48px; padding: 64px 40px; }
+}
+
+@media (max-width: 768px) {
+  .about-grid    { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+  .about-bg-area { width: 100%; height: 180px; }
+  .about-intro   { margin-top: 80px; }
+  .slider-track  { padding: 0 48px; }
+}
+
+@media (max-width: 520px) {
+  .about-grid  { padding: 40px 20px; }
+  .slide-card  { width: clamp(160px, 68vw, 240px); }
+  .about-intro { margin-top: 60px; }
+}

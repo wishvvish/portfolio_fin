@@ -1,0 +1,152 @@
+/* =============================================
+  김소원 포트폴리오 — works.css
+  Works 상세 페이지 전용
+   ============================================= */
+
+
+/* ─────────────────────────────────────────────
+  1. WORKS 서브 내비 (가로 작업 목록)
+  — nav 바로 아래 고정
+───────────────────────────────────────────── */
+.works-subnav {
+  position        : fixed;
+  top             : 80px;          /* mainNav 높이 */
+  left            : 0;
+  right           : 0;
+  z-index         : 190;
+  background      : var(--off-white);
+  display         : flex;
+  align-items     : center;
+  overflow-x      : auto;
+  scrollbar-width : none;
+  -webkit-overflow-scrolling : touch;   /* iOS 부드러운 관성 스크롤 */
+  padding         : 19px 16px;
+  gap             : 24px;
+  cursor: grab;
+  transition      : border-color 0.3s;
+}
+.works-subnav:active{cursor: grabbing;}
+
+.works-subnav::-webkit-scrollbar { display: none; }
+
+.works-subnav a {
+  flex-shrink     : 0;
+  padding         : 8px 15px;
+  font-family     : var(--font-head);
+  font-size       : 20px;
+  font-weight     : 400;
+  letter-spacing  : -0.02em;
+  color           : var(--cool-gray);
+  text-decoration : none;
+  white-space     : nowrap;
+  transition      : color 0.2s, border-color 0.2s;
+}
+.works-subnav a:hover  { color: var(--deep-charcoal); border: 1px solid var(--deep-charcoal);}
+.works-subnav a.active {
+  color         : var(--deep-charcoal);
+  font-weight   : 400;
+  border: 1px solid var(--deep-charcoal);
+}
+
+
+/* ─────────────────────────────────────────────
+  2. 페이지 오프셋 (nav + subnav 높이)
+───────────────────────────────────────────── */
+.works-detail {
+  margin-top : 96px;   /* 53px nav + 37px subnav (approx) */
+}
+
+
+/* ─────────────────────────────────────────────
+  3. 통이미지 섹션
+  — 1440px 기준으로 제작한 이미지를 100% 너비로
+───────────────────────────────────────────── */
+.works-full-img {
+  width      : 100%;
+  display    : block;
+  line-height: 0;      /* 이미지 하단 gap 제거 */
+}
+.works-full-img img {
+  width      : 100%;
+  height     : auto;
+  display    : block;
+  /* ✏️ 이미지 추가 시 <img src="../works-img/파일명.jpg" alt="..."> 형태로 */
+}
+
+/* 이미지 구분선 (섹션 간 미세 간격) */
+.works-full-img + .works-full-img {
+  margin-top : 2px;
+}
+
+
+/* ─────────────────────────────────────────────
+  4. 로딩 플레이스홀더
+  — 이미지 아직 없을 때 표시
+───────────────────────────────────────────── */
+.works-placeholder {
+  width           : 100%;
+  aspect-ratio    : 1440 / 800;
+  background      : var(--light-gray);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  gap             : 12px;
+  color           : var(--cool-gray);
+  font-family     : var(--font-head);
+  font-size       : 13px;
+  letter-spacing  : 0.08em;
+  border-bottom   : 1px solid var(--off-white);
+}
+.works-placeholder::before {
+  content     : '✏️';
+  font-size   : 32px;
+}
+
+
+/* ─────────────────────────────────────────────
+  5. OTHER WORKS 섹션 간격 조정
+───────────────────────────────────────────── */
+.other-works-section {
+  margin-top : 0;
+}
+
+
+/* ─────────────────────────────────────────────
+  ✨ 선택적 효과 (주석 해제 시 활성화)
+───────────────────────────────────────────── */
+
+/* [효과 1] 이미지 호버 시 미세 확대 (스크롤 시 자연스러운 느낌) */
+/*
+.works-full-img {
+  overflow : hidden;
+}
+.works-full-img img {
+  transition : transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.works-full-img:hover img {
+  transform : scale(1.01);
+}
+*/
+
+/* [효과 2] 각 이미지 스크롤 페이드인 (JS와 함께 사용) */
+/*
+.works-full-img {
+  opacity   : 0;
+  transform : translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.works-full-img.visible {
+  opacity   : 1;
+  transform : translateY(0);
+}
+*/
+
+/* ─────────────────────────────────────────────
+  6. 반응형
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .works-subnav{ padding:  25px 16px;}
+  .works-subnav a { font-size: 15px; padding: 8px 15px; }
+  .works-detail   { margin-top: 90px; }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – SOWON KIM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <ul class="nav-links">
+    <li><a href="index.html"       data-page="home">HOME</a></li>
+    <li><a href="works/vetements.html" data-page="works">WORKS</a></li>
+    <li><a href="about.html" class="active" data-page="about">ABOUT</a></li>
+  </ul>
+  <button class="nav-mail" id="mailBtn" title="Contact">
+    <img src="img/mail.png" alt="mail">
+  </button>
+</nav>
+
+<!-- ABOUT 메인 -->
+<section class="about-section" id="top">
+  <div class="about-bg-area"></div>
+  <div class="about-grid">
+
+    <!-- 좌측 -->
+    <div class="about-left">
+      <h1 class="about-intro">
+        변화에 빠르게<br>
+        적응하는 김소원 입니다
+      </h1>
+
+      <h2 class="profile-title">PROFILE</h2>
+      <ul class="about-info">
+        <li><span class="info-label">이름</span><span class="info-value">김소원 &nbsp;|&nbsp; SOWON KIM</span></li>
+        <li><span class="info-label">생년월일</span><span class="info-value">1997.03.31</span></li>
+        <li><span class="info-label">이메일</span><span class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b202226383c7c727c0b2c262a222765282426">[email&#160;protected]</a></span></li>
+        <li><span class="info-label">휴대전화</span><span class="info-value">+82 10 3022 6486</span></li>
+      </ul>
+
+      <div class="about-skills">
+        <h3 class="skills-title">SKILLS</h3>
+        <div class="skills-list">
+          <img class="skill-icon" src="about-img/adobe-ai.png" alt="Adobe Illustrator">
+          <img class="skill-icon" src="about-img/adobe-ps.png" alt="Adobe Photoshop">
+          <img class="skill-icon" src="about-img/figma.png"    alt="Figma">
+          <img class="skill-icon" src="about-img/html.png"     alt="HTML">
+          <img class="skill-icon" src="about-img/css.png"      alt="CSS">
+          <img class="skill-icon" src="about-img/js.png"       alt="JavaScript">
+        </div>
+      </div>
+    </div>
+
+    <!-- 우측 -->
+    <div class="about-right">
+      <div class="about-block">
+        <h3 class="block-title">EDUCATION</h3>
+        <ul class="block-list">
+          <li>
+            <div class="block-item-left">
+              <p class="item-name">계원예술대학교</p>
+              <p class="item-sub">광고브랜드디자인학과 졸업</p>
+            </div>
+            <span class="item-year">2019</span>
+          </li>
+          <li>
+            <div class="block-item-left">
+              <p class="item-name">경기광주남자고등학교 졸업</p>
+            </div>
+            <span class="item-year">2016</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h3 class="block-title">EXPERIENCES</h3>
+        <ul class="block-list">
+          <li><div class="block-item-left"><p class="item-name">&lt;경안댁&gt;</p><p class="item-sub">BI 디자인</p></div><span class="item-year">2025</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;PIZZA ALWAYS GOOD&gt;</p><p class="item-sub">창업</p></div><span class="item-year">2023</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;GOOPI&gt;</p><p class="item-sub">BI/BX 디자인</p></div><span class="item-year">2020</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;PUMA X LAUNDRY PIZZA&gt;</p><p class="item-sub">그래픽 아티스트</p></div><span class="item-year">2019</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;CUSTOM ZONE&gt;</p><p class="item-sub">제작팀</p></div><span class="item-year">2019</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;August Frogs&gt;</p><p class="item-sub">미술팀</p></div><span class="item-year">2018</span></li>
+          <li><div class="block-item-left"><p class="item-name">&lt;닷 디자인&gt;</p><p class="item-sub">전시디자인 미술팀</p></div><span class="item-year">2017</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WORKS 슬라이더 (about은 모든 8개 표시) -->
+<section class="other-works-section">
+  <h2 class="other-works-title">OTHER WORKS</h2>
+  <div class="slider-wrapper">
+    <button class="slider-arrow arrow-left" id="arrowLeft">&#8592;</button>
+    <div class="slider-track" id="sliderTrack">
+      <a class="slide-card" href="works/vetements.html"><img class="slide-thumb" src="img/vetements.jpg" alt="vetements"><div class="slide-overlay"><p class="slide-title">&lt;VETEMENTS&gt;<br>WEBSITE REDESIGN</p><p class="slide-date">2026. 02</p></div></a>
+      <a class="slide-card" href="works/sony.html"><img class="slide-thumb" src="img/sony.jpg" alt="sony"><div class="slide-overlay"><p class="slide-title">&lt;SONY&gt;<br>WEBSITE REDESIGN</p><p class="slide-date">2026. 01</p></div></a>
+      <a class="slide-card" href="works/pag.html"><img class="slide-thumb" src="img/pag.jpg" alt="pag"><div class="slide-overlay"><p class="slide-title">&lt;PIZZAALWAYSGOOD&gt;<br>START-UP</p><p class="slide-date">2023. 03 ~ 2025. 05</p></div></a>
+      <a class="slide-card" href="works/goopi.html"><img class="slide-thumb" src="img/goopi.jpg" alt="goopi"><div class="slide-overlay"><p class="slide-title">&lt;GOOPI&gt;<br>BRAND VISUAL DIRECTER</p><p class="slide-date">2020. 08</p></div></a>
+      <a class="slide-card" href="works/puma.html"><img class="slide-thumb" src="img/puma.jpg" alt="puma"><div class="slide-overlay"><p class="slide-title">&lt;PUMA X LAUNDRY PIZZA&gt;<br>VISUAL DIRECTER</p><p class="slide-date">2019. 09</p></div></a>
+      <a class="slide-card" href="works/ai.html"><img class="slide-thumb" src="img/ai.jpg" alt="ai"><div class="slide-overlay"><p class="slide-title">AI ARCHIVE</p><p class="slide-date">~2026</p></div></a>
+      <a class="slide-card" href="works/design.html"><img class="slide-thumb" src="img/design.jpg" alt="design"><div class="slide-overlay"><p class="slide-title">GRAPHIC ARCHIVE</p><p class="slide-date">~2026</p></div></a>
+      <a class="slide-card" href="works/drawing.html"><img class="slide-thumb" src="img/drawing.jpg" alt="drawing"><div class="slide-overlay"><p class="slide-title">DRAWING</p><p class="slide-date">~2026</p></div></a>
+    </div>
+    <button class="slider-arrow arrow-right" id="arrowRight">&#8594;</button>
+  </div>
+</section>
+
+<!-- 공통 푸터 -->
+<footer id="footer">
+  <a href="#top" class="footer-top-link">Back to Top ↑</a>
+  <span>©2026 SOWON KIM</span>
+</footer>
+
+<button class="back-to-top" id="backToTopBtn" title="맨 위로">↑</button>
+
+<!-- 공통 CONTACT 모달 -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="contactModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <h2 class="modal-title">CONTACT</h2>
+      <span class="modal-copy">©26</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form-area">
+        <p class="modal-label">성함 (필수) / Name (required)</p>
+        <div class="modal-name-row">
+          <div class="modal-field"><label>성 (First Name)</label><input type="text" placeholder="성을 입력하세요."></div>
+          <div class="modal-field"><label>이름 (Last Name)</label><input type="text" placeholder="이름을 입력하세요."></div>
+        </div>
+        <div class="modal-field">
+          <label>이메일 (필수) / E-mail (required)</label>
+          <div class="modal-email-row">
+            <input type="text" placeholder="portfolio" class="email-id">
+            <span class="at">@</span>
+            <div class="email-domain-wrap">
+              <input type="text" value="gmail.com" class="email-domain">
+              <span class="chevron">⌄</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-field"><label>메시지 / Message</label><input type="text" placeholder="메시지를 입력해주세요."></div>
+        <button class="modal-send">보내기 / SEND</button>
+        <p class="modal-footer-text">©2026. SOWON KIM. &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d4644405e5a1a141a6d4a404c4441034e4240">[emai

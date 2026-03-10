@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Portfolio – SOWON KIM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <ul class="nav-links">
+    <li><a href="#top"       class="active" data-page="home">HOME</a></li>
+    <li><a href="works/vetements.html"     data-page="works">WORKS</a></li>
+    <li><a href="about.html" data-page="about">ABOUT</a></li>
+  </ul>
+  <button class="nav-mail" id="mailBtn" title="Contact">
+    <img src="img/mail.png" alt="mail">
+  </button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-title-area">
+    <img src="img/title.png" alt="Portfolio">
+  </div>
+  <div class="meta-bar">
+    <span>Design Portfolio</span>
+    <span>©2026 SOWON KIM</span>
+  </div>
+</section>
+
+<main class="grid" id="works">
+
+  <a class="grid-item" href="works/vetements.html">
+    <img class="thumb" src="img/vetements.jpg" alt="vetements">
+    <div class="overlay">
+      <p class="overlay-title">&lt;VETEMENTS&gt;<br>WEBSITE REDESIGN</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">2026. 02</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/sony.html">
+    <img class="thumb" src="img/sony.jpg" alt="sony">
+    <div class="overlay">
+      <p class="overlay-title">&lt;SONY&gt;<br>WEBSITE REDESIGN</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">2026. 01</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/pag.html">
+    <img class="thumb" src="img/pag.jpg" alt="pag">
+    <div class="overlay">
+      <p class="overlay-title">&lt;PIZZAALWAYSGOOD&gt;<br>START-UP</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">2023. 03 ~ 2025. 05</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/goopi.html">
+    <img class="thumb" src="img/goopi.jpg" alt="goopi">
+    <div class="overlay">
+      <p class="overlay-title">&lt;GOOPI&gt;<br>BRAND VISUAL DIRECTER</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">2020. 08</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/puma.html">
+    <img class="thumb" src="img/puma.jpg" alt="puma">
+    <div class="overlay">
+      <p class="overlay-title">&lt;PUMA X LAUNDRY PIZZA&gt;<br>VISUAL DIRECTER</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">2019. 09</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/ai.html">
+    <img class="thumb" src="img/ai.jpg" alt="ai">
+    <div class="overlay">
+      <p class="overlay-title">AI ARCHIVE</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">~2026</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/design.html">
+    <img class="thumb" src="img/design.jpg" alt="design">
+    <div class="overlay">
+      <p class="overlay-title">GRAPHIC ARCHIVE</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">~2026</p>
+    </div>
+  </a>
+
+  <a class="grid-item" href="works/drawing.html">
+    <img class="thumb" src="img/drawing.jpg" alt="drawing">
+    <div class="overlay">
+      <p class="overlay-title">DRAWING</p>
+      <div class="overlay-divider"></div>
+      <p class="overlay-date">~2026</p>
+    </div>
+  </a>
+
+</main>
+
+<!-- 공통 푸터 -->
+<footer id="footer">
+  <a href="#top" class="footer-top-link">Back to Top ↑</a>
+  <span>©2026 SOWON KIM</span>
+</footer>
+
+<button class="back-to-top" id="backToTopBtn" title="맨 위로">↑</button>
+
+<!-- 공통 CONTACT 모달 -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="contactModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <h2 class="modal-title">CONTACT</h2>
+      <span class="modal-copy">©26</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form-area">
+        <p class="modal-label">성함 (필수) / Name (required)</p>
+        <div class="modal-name-row">
+          <div class="modal-field">
+            <label>성 (First Name)</label>
+            <input type="text" placeholder="성을 입력하세요.">
+          </div>
+          <div class="modal-field">
+            <label>이름 (Last Name)</label>
+            <input type="text" placeholder="이름을 입력하세요.">
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>이메일 (필수) / E-mail (required)</label>
+          <div class="modal-email-row">
+            <input type="text" placeholder="portfolio" class="email-id">
+            <span class="at">@</span>
+            <div class="email-domain-wrap">
+              <input type="text" value="gmail.com" class="email-domain">
+              <span class="chevron">⌄</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>메시지 / Message</label>
+          <input type="text" placeholder="메시지를 입력해주세요.">
+        </div>
+        <button class="modal-send">보내기 / SEND</button>
+        <p class="modal-footer-text">©2026. SOWON KIM. &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e88381859b9fdfd1dfa88f85898184c68b8785">[email&#160;protected]</a></p>
+      </div>
+      <div class="modal-image-area">
+        <img src="img/contact.jpg" alt="contact">
+      </di
