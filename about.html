@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About – SOWON KIM</title>
+  <title>About - SOWON KIM</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
@@ -35,12 +35,23 @@
         적응하는 김소원 입니다
       </h1>
 
-      <h2 class="profile-title">PROFILE</h2>
+      <h2 class="profile-title">CONTACT</h2>
       <ul class="about-info">
         <li><span class="info-label">이름</span><span class="info-value">김소원 &nbsp;|&nbsp; SOWON KIM</span></li>
-        <li><span class="info-label">생년월일</span><span class="info-value">1997.03.31</span></li>
-        <li><span class="info-label">이메일</span><span class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b202226383c7c727c0b2c262a222765282426">[email&#160;protected]</a></span></li>
-        <li><span class="info-label">휴대전화</span><span class="info-value">+82 10 3022 6486</span></li>
+        <li>
+          <span class="info-label">이메일</span>
+          <span class="info-value">
+            <span id="email">kimsw797@gmail.com</span>
+            <button class="copy-btn" onclick="copyEmail(this)">Copy</button>
+          </span>
+        </li>
+        <li>
+          <span class="info-label">휴대전화</span>
+          <span class="info-value">
+            <a href="tel:+821030226486">+82 10 3022 6486</a>
+          </span>
+        </li>
+        <li><span class="info-label">로케이션</span><span class="info-value">Gyeonggi Province, South Korea</span></li> 
       </ul>
 
       <div class="about-skills">
@@ -120,7 +131,7 @@
 
 <button class="back-to-top" id="backToTopBtn" title="맨 위로">↑</button>
 
-<!-- 공통 CONTACT 모달 -->
+<!-- ════ 공통 CONTACT 모달 ════ -->
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal" id="contactModal">
     <button class="modal-close" id="modalClose">✕</button>
@@ -147,5 +158,17 @@
           </div>
         </div>
         <div class="modal-field"><label>메시지 / Message</label><input type="text" placeholder="메시지를 입력해주세요."></div>
-        <button class="modal-send">보내기 / SEND</button>
-        <p class="modal-footer-text">©2026. SOWON KIM. &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d4644405e5a1a141a6d4a404c4441034e4240">[emai
+        <a class="modal-send" href="mailto:kimsw797@gmail.com?subject=Portfolio%20Contact">보내기 / SEND</a>
+        <p class="modal-footer-text">©2026. SOWON KIM. &nbsp;|&nbsp; <a href="mailto:kimsw797@gmail.com">kimsw797@gmail.com</a></p>
+      </div>
+      <div class="modal-image-area"><img src="../img/contact.jpg" alt="contact"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/common.js"></script>
+<script src="../js/slider.js"></script>
+
+</body>
+</html>

@@ -51,3 +51,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+// SEND 버튼 — 폼 내용을 mailto로 전달
+const sendBtn = document.querySelector('.modal-send');
+if (sendBtn) {
+  sendBtn.addEventListener('click', () => {
+    const firstName = document.querySelector('input[placeholder="성을 입력하세요."]').value.trim();
+    const lastName  = document.querySelector('input[placeholder="이름을 입력하세요."]').value.trim();
+    const emailId   = document.querySelector('.email-id').value.trim();
+    const emailDomain = document.querySelector('.email-domain').value.trim();
+    const message   = document.querySelector('input[placeholder="메시지를 입력해주세요."]').value.trim();
+
+    if (!firstName || !emailId || !message) {
+      alert('필수 항목을 입력해주세요.');
+      return;
+    }
+
+    const subject = encodeURIComponent(`[Portfolio] ${firstName}${lastName} 님의 문의`);
+    const body    = encodeURIComponent(
+      `이름: ${firstName} ${lastName}\n이메일: ${emailId}@${emailDomain}\n\n${message}`
+    );
+
+    window.location.href = `mailto:kimsw797@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
+/*email copy btn java*/
+function copyEmail(button){
+
+const email = document.getElementById("email").innerText;
+
+navigator.clipboard.writeText(email);
+
+button.innerText = "Copied!";
+
+setTimeout(()=>{
+button.innerText = "Copy";
+},2000);
+
+}

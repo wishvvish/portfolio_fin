@@ -112,35 +112,6 @@
 }
 
 
-/* ─────────────────────────────────────────────
-  ✨ 선택적 효과 (주석 해제 시 활성화)
-───────────────────────────────────────────── */
-
-/* [효과 1] 이미지 호버 시 미세 확대 (스크롤 시 자연스러운 느낌) */
-/*
-.works-full-img {
-  overflow : hidden;
-}
-.works-full-img img {
-  transition : transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.works-full-img:hover img {
-  transform : scale(1.01);
-}
-*/
-
-/* [효과 2] 각 이미지 스크롤 페이드인 (JS와 함께 사용) */
-/*
-.works-full-img {
-  opacity   : 0;
-  transform : translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.works-full-img.visible {
-  opacity   : 1;
-  transform : translateY(0);
-}
-*/
 
 /* ─────────────────────────────────────────────
   6. 반응형
@@ -148,6 +119,5 @@
 @media (max-width: 768px) {
   .works-subnav{ padding:  25px 16px;}
   .works-subnav a { font-size: 15px; padding: 8px 15px; }
-  .works-detail   { margin-top: 166px; }
-  .works-subnav a:hover  { color: var(--cool-gray); border: none;}
+  .works-detail   { margin-top: 90px; }
 }
