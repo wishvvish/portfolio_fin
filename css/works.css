@@ -41,7 +41,7 @@
   white-space     : nowrap;
   transition      : color 0.2s, border-color 0.2s;
 }
-.works-subnav a:hover  { color: var(--deep-charcoal); border: 1px solid var(--deep-charcoal);}
+.works-subnav a:hover  { color: var(--cool-gray); border: none;}
 .works-subnav a.active {
   color         : var(--deep-charcoal);
   font-weight   : 400;
